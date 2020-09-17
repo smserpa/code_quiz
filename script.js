@@ -10,36 +10,49 @@ function startQuiz() {
     }
     document.getElementById("hide-questions").style.display = "block";
     
-
-    var myQuestions = [
-    
-        {
-            question: "In javascript true is an example of what kind of value?",
-            answers: {
-                a: "String",
-                b: "Boolean",
-                c: "Number",
-                d: "Object"
-            },
-            correctAnswer: "b"
-        },
-        {
-            question: "In bash/terminal what does the rm -r command perform?",
-            answers: {
-                a: "Makes a new directory",
-                b: "Changes directory",
-                c: "Makes a file",
-                d: "Deletes an item and all descendants"
-            },
-            correctAnswer: "d"
-        },
-    ];
-
-    for (var i = 0; i < answers.length; i++) {
-        var loadButton = document.getElementsByClassName("btn");
-        loadButton.textContent = answers[i];
-    }
 }
+
+function Question(text, choices, answer) {
+    this.text=text; 
+    this.choices=choices;
+    this.answer=answer;
+}
+
+Question.prototype.correctAnswer = function(choice) {
+    return choice === this.answer;
+}
+
+
+
+//     var myQuestions = [
+    
+//         {
+//             question: "In javascript true is an example of what kind of value?",
+//             answers: {
+//                 a: "String",
+//                 b: "Boolean",
+//                 c: "Number",
+//                 d: "Object"
+//             },
+//             correctAnswer: "b"
+//         },
+//         {
+//             question: "In bash/terminal what does the rm -r command perform?",
+//             answers: {
+//                 a: "Makes a new directory",
+//                 b: "Changes directory",
+//                 c: "Makes a file",
+//                 d: "Deletes an item and all descendants"
+//             },
+//             correctAnswer: "d"
+//         },
+//     ];
+
+//     for (var i = 0; i < answers.length; i++) {
+//         var loadButton = document.getElementsByClassName("btn");
+//         loadButton.textContent = answers[i];
+//     }
+// }
 
 
 // submitButton.addEventListener('click', displayResults);
@@ -48,7 +61,4 @@ function startQuiz() {
 //     return document.getElementById("question-box");
 // }
 // showQuestions(Object.getOwnPropertyNames(myQuestions))
-
-
-
 
